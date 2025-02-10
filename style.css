@@ -1,0 +1,139 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and background styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000; /* Solid black background */
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Main container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Main header styling */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #FFFFFF; /* White heading */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Flowchart container */
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card styling for each step */
+.card {
+  background: #011D40; /* Retain dark blue background */
+  border: 1px solid #0D3B66;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  position: relative;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Stagger animation delay */
+.card:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+/* Card headings using blue and white shades */
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2B6ABC; /* A bright blue for section titles */
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin: 20px 0 10px;
+  color: #90CAF9; /* Lighter blue for sub-headings */
+}
+
+/* List styling within cards */
+.card ul {
+  list-style: disc inside;
+  margin-left: 10px;
+}
+.card ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #E0E0E0; /* Light gray/white for list items */
+}
+
+/* Arrow styling */
+.arrow {
+  margin-bottom: 30px;
+  animation: arrowBounce 1.5s infinite;
+}
+
+/* Arrow SVG styling */
+.arrow svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: #2B6ABC; /* Blue arrow */
+  stroke-width: 2;
+}
+
+/* Fade in up animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce animation for arrows */
+@keyframes arrowBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  .card {
+    padding: 20px;
+  }
+  .card h2 {
+    font-size: 1.6rem;
+  }
+}
